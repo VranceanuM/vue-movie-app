@@ -1,14 +1,14 @@
 <template>
 
   <v-layout
-    wrap
+    
     
   ><v-toolbar dark color="primary" fixed>
     <v-toolbar-side-icon
     @click.stop="drawer = !drawer">
     </v-toolbar-side-icon>
 
-    <v-toolbar-title class="white--text">Moive Star</v-toolbar-title>
+   <router-link to="/" style="text-decoration:none;"> <v-toolbar-title class="white--text">Moive Star</v-toolbar-title></router-link>
 
     <v-spacer></v-spacer>
 
