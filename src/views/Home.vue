@@ -34,7 +34,11 @@
         </v-card>
       </v-flex>
     </v-layout>
+       
+
  </v-container>
+ <div class="loading" v-if="loading"><fingerprint-spinner/></div>
+ 
 </div>
 </template>
 
@@ -47,14 +51,20 @@ export default {
   },
    data () {
     return {
+      loading:true,
       movies: null,
       image:'https://image.tmdb.org/t/p/w500/'
     }
     },
-  mounted () {
+ async mounted () {
     axios
       .get('https://api.themoviedb.org/3/movie/popular?api_key=7bc75e1ed95b84e912176b719cdeeff9&language=en-US&page=1')
-      .then(response => (this.movies = response.data.results))
+      .then(response => (
+        this.movies = response.data.results,
+        this.loading = false
+        
+        ))
+      
   }
 }
 </script>
