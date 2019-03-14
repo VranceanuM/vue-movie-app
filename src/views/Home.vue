@@ -6,7 +6,7 @@
    <h1 class="text-lg-left mt-5">Recomanded for you</h1>
 
     <v-layout row wrap align-start>
-      <v-flex xs12 sm6 md4 class="p-4" v-for="m in movies" :key=m.id>
+      <v-flex xs12 sm6 md4 class="p-4" v-for="m in movies" :key="m.id">
         <v-card 
         
         dark color="secondary">
@@ -26,8 +26,9 @@
 
         <v-card-actions>
           <v-btn flat color="orange">Share</v-btn>
+           <router-link style="text-decoration:none;" :to ="{name:'movie',params:{m_id:m.id}}">
           <v-btn flat color="orange">
-            <router-link style="text-decoration:none;" :to ="{name:'movie',params:{m_id:m.id}}">Explore</router-link></v-btn>
+           Explore</v-btn></router-link>
         </v-card-actions>
       </v-card>
         </v-card>
